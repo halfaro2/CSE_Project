@@ -19,9 +19,9 @@
 		17609DCB219C9C3E00F85383 /* AnimatedRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17609DC9219C9C3E00F85383 /* AnimatedRect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17609DCE219CA02D00F85383 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17609DCC219CA02D00F85383 /* Timer.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D20D67EA21AF3EBC0000CB54 /* fireball.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D20D67E821AF3EA50000CB54 /* fireball.bmp */; };
-		D2CB656E21B4972300815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB656C21B496E500815977 /* Taxi-Back-Yellow-icon.bmp */; };
-		D2CB657021B4979600815977 /* Car-Front-Red-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB656F21B4978C00815977 /* Car-Front-Red-icon.bmp */; };
-		D2CB657321B49B9400815977 /* CityBackground.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657221B49B8500815977 /* CityBackground.bmp */; };
+		D2CB657721B4A6AF00815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657421B4A68F00815977 /* Taxi-Back-Yellow-icon.bmp */; };
+		D2CB657821B4A6B300815977 /* CityBackground.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657521B4A69400815977 /* CityBackground.bmp */; };
+		D2CB657921B4A6B600815977 /* Car-Front-Red-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657621B4A69800815977 /* Car-Front-Red-icon.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,9 +40,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				D2CB657321B49B9400815977 /* CityBackground.bmp in CopyFiles */,
-				D2CB657021B4979600815977 /* Car-Front-Red-icon.bmp in CopyFiles */,
-				D2CB656E21B4972300815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */,
+				D2CB657921B4A6B600815977 /* Car-Front-Red-icon.bmp in CopyFiles */,
+				D2CB657821B4A6B300815977 /* CityBackground.bmp in CopyFiles */,
+				D2CB657721B4A6AF00815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */,
 				D20D67EA21AF3EBC0000CB54 /* fireball.bmp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,10 +69,10 @@
 		17609DCC219CA02D00F85383 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		17609DCD219CA02D00F85383 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		D20D67E821AF3EA50000CB54 /* fireball.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = fireball.bmp; sourceTree = "<group>"; };
-		D2CB656C21B496E500815977 /* Taxi-Back-Yellow-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Taxi-Back-Yellow-icon.bmp"; sourceTree = "<group>"; };
-		D2CB656F21B4978C00815977 /* Car-Front-Red-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Car-Front-Red-icon.bmp"; sourceTree = "<group>"; };
 		D2CB657121B4987500815977 /* background.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = background.h; sourceTree = "<group>"; };
-		D2CB657221B49B8500815977 /* CityBackground.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = CityBackground.bmp; sourceTree = "<group>"; };
+		D2CB657421B4A68F00815977 /* Taxi-Back-Yellow-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = "Taxi-Back-Yellow-icon.bmp"; path = "Icons/Taxi-Back-Yellow-icon.bmp"; sourceTree = "<group>"; };
+		D2CB657521B4A69400815977 /* CityBackground.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = CityBackground.bmp; path = Icons/CityBackground.bmp; sourceTree = "<group>"; };
+		D2CB657621B4A69800815977 /* Car-Front-Red-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = "Car-Front-Red-icon.bmp"; path = "Icons/Car-Front-Red-icon.bmp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				D20D67E821AF3EA50000CB54 /* fireball.bmp */,
-				D2CB656C21B496E500815977 /* Taxi-Back-Yellow-icon.bmp */,
-				D2CB657221B49B8500815977 /* CityBackground.bmp */,
-				D2CB656F21B4978C00815977 /* Car-Front-Red-icon.bmp */,
+				D2CB657421B4A68F00815977 /* Taxi-Back-Yellow-icon.bmp */,
+				D2CB657521B4A69400815977 /* CityBackground.bmp */,
+				D2CB657621B4A69800815977 /* Car-Front-Red-icon.bmp */,
 				173FEF171AA63B22006CCB85 /* GLUT.framework */,
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,
