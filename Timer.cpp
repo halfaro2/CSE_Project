@@ -31,3 +31,8 @@ void Timer::start(){
     running = true;
     timerThread = std::thread(repeat, this);
 }
+
+//make a draw function that will display the incrementing timer
+void Timer::displayTimer(){
+    //fill in here
+}

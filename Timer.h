@@ -27,6 +27,9 @@ public:
     void setRate(int);
     
     void stop();
+
+    //full method in Timer.cpp file
+    void displayTimer();
     
     ~Timer();
     
