@@ -18,7 +18,11 @@ private:
    
     
 public:
-    <#member functions#>
+    Background(float x = 0, float y = 0, float w = 0.5, h = 0.5)
+    this -> x = x;
+    this -> y = y;
+    this -> w = w;
+    this -> h = h;
 };
 
 

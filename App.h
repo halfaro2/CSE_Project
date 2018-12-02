@@ -6,8 +6,8 @@
 
 
 class App: public GlutApp {
-    AnimatedRect* explosion;
-    AnimatedRect* fastExplosion;
+    AnimatedRect* TaxiFront;
+    AnimatedRect* RedCar;
     
     
 public:
