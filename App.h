@@ -8,7 +8,7 @@
 class App: public GlutApp {
     AnimatedRect* TaxiFront;
     AnimatedRect* RedCar;
-    
+    AnimatedRect* Background;
     
 public:
     App(int argc, char** argv);
