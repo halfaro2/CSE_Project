@@ -22,6 +22,7 @@
 		D2CB657D21B4B4F100815977 /* CityBackground.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657B21B4B4E600815977 /* CityBackground.bmp */; };
 		D2CB657E21B4B4F400815977 /* Car-Front-Red-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657A21B4B4E200815977 /* Car-Front-Red-icon.bmp */; };
 		D2CB657F21B4B4F800815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */; };
+		D2CB658121B4BBB800815977 /* bitcoin-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				D2CB658121B4BBB800815977 /* bitcoin-icon.bmp in CopyFiles */,
 				D2CB657F21B4B4F800815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */,
 				D2CB657E21B4B4F400815977 /* Car-Front-Red-icon.bmp in CopyFiles */,
 				D2CB657D21B4B4F100815977 /* CityBackground.bmp in CopyFiles */,
@@ -73,6 +75,7 @@
 		D2CB657A21B4B4E200815977 /* Car-Front-Red-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Car-Front-Red-icon.bmp"; sourceTree = "<group>"; };
 		D2CB657B21B4B4E600815977 /* CityBackground.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = CityBackground.bmp; sourceTree = "<group>"; };
 		D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Taxi-Back-Yellow-icon.bmp"; sourceTree = "<group>"; };
+		D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "bitcoin-icon.bmp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D20D67E821AF3EA50000CB54 /* fireball.bmp */,
+				D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */,
 				D2CB657B21B4B4E600815977 /* CityBackground.bmp */,
 				D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */,
 				D2CB657A21B4B4E200815977 /* Car-Front-Red-icon.bmp */,

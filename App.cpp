@@ -2,7 +2,9 @@
 #include "App.h"
 
 App::App(int argc, char** argv): GlutApp(argc, argv){
-   
+   Coin = new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, 0, -.8, .3, .3);
+
+    
    Background = new AnimatedRect("CityBackground.bmp", 1, 1, 100, -1, 1, 2, 2);
 
 
@@ -17,10 +19,10 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
 }
 
 void App::draw() {
-   
+    Coin->draw(0.15);\
     TaxiFront->draw(0.15);
     RedCar->draw(0.15);
-     Background->draw(.15);
+    Background->draw(.15);
 
 }
 
@@ -33,6 +35,7 @@ void App::keyDown(unsigned char key, float x, float y){
         Background->playOnce();
         RedCar->playOnce();
         TaxiFront->playOnce();
+        Coin->playOnce();
     }
 }
 
@@ -41,4 +44,5 @@ App::~App(){
     delete TaxiFront;
     delete Background;
     delete RedCar;
+    delete Coin;
 }
