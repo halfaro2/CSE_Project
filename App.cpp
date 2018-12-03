@@ -21,22 +21,32 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
 
     TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -.275, -0.6, 0.5, 0.5);
     
-    RedCar.push_back(new AnimatedRect("Car-Front-Red-icon.bmp", 1, 1, 10, 0.5, 0.0, 0.5, 0.5));
+    //right lane
+    RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.045, 0.4, 0.1, 0.1));
+    //middle lane
+    RedCar.push_back(new AnimatedRect("Car-Front-Red-icon.png", 1, 1, 10, -0.045, 0.4, 0.1, 0.1));
+    //left lane
+    RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, -0.14, 0.4, 0.1, 0.1));
+
 
     Balloon = new AnimatedRect("balloon.png", 1, 1, 100, 0.5, .8, 0.15, 0.15);
 
     CopCar.push_back(new AnimatedRect("copcar.png", 1, 1, 10, -0.4, 0.4, 0.15, 0.15));
+
 }
 
 void App::draw() {
-    //Balloon->draw(.15);
 
     Background->draw(0.15);
     TaxiFront->draw(0.25);
     CopCar[0]->draw(0.25);
     Balloon->draw(0.25);
-    RedCar[0]->draw(0.25);
+    
     Coin[0]->draw(0.55);
+
+    for(int i = 0; i < RedCar.size(); i++){
+        RedCar[i]->draw(0.25);
+    }
     
 }
 
@@ -47,10 +57,13 @@ void App::keyDown(unsigned char key, float x, float y){
     
     if (key == ' '){
        cout<< "space bar is being pressed"<< endl;
+
         Background->playOnce();
         Balloon->playOnce();
         CopCar[0]->playOnce();
-        RedCar[0]->playOnce();
+        for(int i = 0; i < RedCar.size(); i++){
+        RedCar[i]->playOnce();
+    }
         TaxiFront->playOnce();
         Coin[0]->playOnce();
     }
