@@ -13,6 +13,7 @@ class App: public GlutApp {
     AnimatedRect* Background;
     vector<AnimatedRect*> Coin;
     AnimatedRect* Balloon;
+    vector<AnimatedRect*> CopCar;
     
 public:
     App(int argc, char** argv);
