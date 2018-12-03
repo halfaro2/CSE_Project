@@ -3,13 +3,16 @@
 
 #include "GlutApp.h"
 #include "AnimatedRect.h"
+#include <vector>
+using namespace std;
 
 
 class App: public GlutApp {
     AnimatedRect* TaxiFront;
-    AnimatedRect* RedCar;
+    vector<AnimatedRect*> RedCar;
     AnimatedRect* Background;
-    AnimatedRect* Coin;
+    vector<AnimatedRect*> Coin;
+    AnimatedRect* Balloon;
     
 public:
     App(int argc, char** argv);
