@@ -17,9 +17,9 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //added coin for an extra 10 points    
         //Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
     //background of the game
-    Background = new AnimatedRect("newroad.png", 1, 1, 100, -1, 1, 2, 2);
+    Background = new AnimatedRect("newroad.png", 1, 1, 100, -1, 1, 2, 2);       //Background
 
-    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -.275, -0.6, 0.5, 0.5);
+    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -.275, -0.6, 0.5, 0.5);    //TaxiFront
     
     //right lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.045, 0.4, 0.1, 0.1));
@@ -29,11 +29,11 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, -0.14, 0.4, 0.1, 0.1));
 
 
-    Balloon = new AnimatedRect("balloon.png", 1, 1, 100, 0.5, .8, 0.15, 0.15);
+    Balloon = new AnimatedRect("balloon.png", 1, 1, 100, 0.5, .8, 0.15, 0.15);  //Ballon
     
-    PlaneFront = new AnimatedRect("Airplane-Front-Red-icon.png",1, 1, 100, -.090, 0, .5, .5);
+    PlaneFront = new AnimatedRect("Airplane-Front-Red-icon.png",1, 1, 100, -.090, 0, .5, .5);   //PlaneFront
 
-    CopCar.push_back(new AnimatedRect("copcar.png", 1, 1, 10, -0.4, 0.4, 0.15, 0.15));
+    CopCar.push_back(new AnimatedRect("copcar.png", 1, 1, 10, -0.4, 0.4, 0.15, 0.15));  //CopCar
     
   
 
@@ -47,7 +47,7 @@ void App::draw() {
     Balloon->draw(0.25);
     PlaneFront->draw(0.25);
     
-    //Coin[0]->draw(0.55);                  //Uncomment
+    //Coin[0]->draw(0.55);
 
     for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->draw(0.25);
@@ -66,9 +66,9 @@ void App::keyDown(unsigned char key, float x, float y){
         Background->playOnce();
         Balloon->playOnce();
         CopCar[0]->playOnce();
+        PlaneFront ->playOnce();
         for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->playOnce();
-        PlaneFront ->playOnce();
     }
         TaxiFront->playOnce();
        // Coin[0]->playOnce();          // Uncomment

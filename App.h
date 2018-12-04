@@ -8,13 +8,13 @@ using namespace std;
 
 
 class App: public GlutApp {
-    AnimatedRect* TaxiFront;
-    vector<AnimatedRect*> RedCar;
-    AnimatedRect* Background;
-    vector<AnimatedRect*> Coin;
-    AnimatedRect* Balloon;
-    vector<AnimatedRect*> CopCar;
-    AnimatedRect* PlaneFront;
+    AnimatedRect* TaxiFront;        //TaxiFront
+    vector<AnimatedRect*> RedCar;   //RedCar
+    AnimatedRect* Background;       //Background
+    vector<AnimatedRect*> Coin;     //Coin
+    AnimatedRect* Balloon;          //Ballon
+    vector<AnimatedRect*> CopCar;   //CopCar
+    AnimatedRect* PlaneFront;       //PlaneFront
     
 public:
     App(int argc, char** argv);
