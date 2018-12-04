@@ -14,6 +14,7 @@ class App: public GlutApp {
     vector<AnimatedRect*> Coin;
     AnimatedRect* Balloon;
     vector<AnimatedRect*> CopCar;
+    AnimatedRect* PlaneFront;
     
 public:
     App(int argc, char** argv);

@@ -19,8 +19,11 @@
 		17609DCB219C9C3E00F85383 /* AnimatedRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17609DC9219C9C3E00F85383 /* AnimatedRect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17609DCE219CA02D00F85383 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17609DCC219CA02D00F85383 /* Timer.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D20D67EA21AF3EBC0000CB54 /* fireball.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D20D67E821AF3EA50000CB54 /* fireball.bmp */; };
+		D2A39A0F21B5DD63009E9B28 /* newroad.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2A39A0E21B5DD5A009E9B28 /* newroad.png */; };
+		D2A39A1121B5DD91009E9B28 /* balloon.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2A39A1021B5DD81009E9B28 /* balloon.png */; };
+		D2A39A1321B60C8E009E9B28 /* copcar.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2A39A1221B60C87009E9B28 /* copcar.png */; };
+		D2A39A1521B60DFD009E9B28 /* Airplane-Front-Red-icon.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2A39A1421B60DF4009E9B28 /* Airplane-Front-Red-icon.png */; };
 		D2CB657D21B4B4F100815977 /* CityBackground.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657B21B4B4E600815977 /* CityBackground.bmp */; };
-		D2CB657E21B4B4F400815977 /* Car-Front-Red-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657A21B4B4E200815977 /* Car-Front-Red-icon.bmp */; };
 		D2CB657F21B4B4F800815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */; };
 		D2CB658121B4BBB800815977 /* bitcoin-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */; };
 /* End PBXBuildFile section */
@@ -41,9 +44,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				D2A39A1521B60DFD009E9B28 /* Airplane-Front-Red-icon.png in CopyFiles */,
+				D2A39A1321B60C8E009E9B28 /* copcar.png in CopyFiles */,
+				D2A39A1121B5DD91009E9B28 /* balloon.png in CopyFiles */,
+				D2A39A0F21B5DD63009E9B28 /* newroad.png in CopyFiles */,
 				D2CB658121B4BBB800815977 /* bitcoin-icon.bmp in CopyFiles */,
 				D2CB657F21B4B4F800815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */,
-				D2CB657E21B4B4F400815977 /* Car-Front-Red-icon.bmp in CopyFiles */,
 				D2CB657D21B4B4F100815977 /* CityBackground.bmp in CopyFiles */,
 				D20D67EA21AF3EBC0000CB54 /* fireball.bmp in CopyFiles */,
 			);
@@ -71,8 +77,11 @@
 		17609DCC219CA02D00F85383 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		17609DCD219CA02D00F85383 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		D20D67E821AF3EA50000CB54 /* fireball.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = fireball.bmp; sourceTree = "<group>"; };
+		D2A39A0E21B5DD5A009E9B28 /* newroad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newroad.png; sourceTree = "<group>"; };
+		D2A39A1021B5DD81009E9B28 /* balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balloon.png; sourceTree = "<group>"; };
+		D2A39A1221B60C87009E9B28 /* copcar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copcar.png; sourceTree = "<group>"; };
+		D2A39A1421B60DF4009E9B28 /* Airplane-Front-Red-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Airplane-Front-Red-icon.png"; sourceTree = "<group>"; };
 		D2CB657121B4987500815977 /* background.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = background.h; sourceTree = "<group>"; };
-		D2CB657A21B4B4E200815977 /* Car-Front-Red-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Car-Front-Red-icon.bmp"; sourceTree = "<group>"; };
 		D2CB657B21B4B4E600815977 /* CityBackground.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = CityBackground.bmp; sourceTree = "<group>"; };
 		D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Taxi-Back-Yellow-icon.bmp"; sourceTree = "<group>"; };
 		D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "bitcoin-icon.bmp"; sourceTree = "<group>"; };
@@ -97,10 +106,13 @@
 			isa = PBXGroup;
 			children = (
 				D20D67E821AF3EA50000CB54 /* fireball.bmp */,
+				D2A39A1421B60DF4009E9B28 /* Airplane-Front-Red-icon.png */,
+				D2A39A1221B60C87009E9B28 /* copcar.png */,
+				D2A39A1021B5DD81009E9B28 /* balloon.png */,
+				D2A39A0E21B5DD5A009E9B28 /* newroad.png */,
 				D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */,
 				D2CB657B21B4B4E600815977 /* CityBackground.bmp */,
 				D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */,
-				D2CB657A21B4B4E200815977 /* Car-Front-Red-icon.bmp */,
 				173FEF171AA63B22006CCB85 /* GLUT.framework */,
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,
