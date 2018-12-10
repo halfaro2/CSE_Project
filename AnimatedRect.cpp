@@ -47,7 +47,7 @@ bool AnimatedRect::done() {
 
 void AnimatedRect::draw(float z){
     if (animating){
-        glBindTexture( GL_TEXTURE_2D, texture_id );
+        glBindTexture( GL_TEXTURE_2D, "bitcoin-icon.bmp");
         glEnable(GL_TEXTURE_2D);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         

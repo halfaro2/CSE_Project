@@ -6,8 +6,8 @@ using namespace std;
 
 
 App::App(int argc, char** argv): GlutApp(argc, argv){
-    // keep first value "1" to make it keep a constant image
-    // second value keep at "1"
+    // first value row
+    // second value column
     // third value is the rate
     // fourth value is the X position
     // fifth value is the Y position
@@ -15,7 +15,8 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     // seventh value is the height
 
     //added coin for an extra 10 points    
-        //Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
+    
+    Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
     //background of the game
     Background = new AnimatedRect("newroad.png", 1, 1, 100, -1, 1, 2, 2);       //Background
 
@@ -31,8 +32,6 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
 
     Balloon = new AnimatedRect("balloon.png", 1, 1, 100, 0.5, .8, 0.15, 0.15);  //Ballon
     
-    PlaneFront = new AnimatedRect("Airplane-Front-Red-icon.png",1, 1, 100, -.090, 0, .5, .5);   //PlaneFront
-
     CopCar.push_back(new AnimatedRect("copcar.png", 1, 1, 10, -0.4, 0.4, 0.15, 0.15));  //CopCar
     
   
@@ -44,10 +43,8 @@ void App::draw() {
     Background->draw(0.15);
     TaxiFront->draw(0.25);
     CopCar[0]->draw(0.25);
-    Balloon->draw(0.25);
-    PlaneFront->draw(0.25);
-    
-    //Coin[0]->draw(0.55);
+    Balloon->draw(0.25);    
+    Coin[0]->draw(0.55);
 
     for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->draw(0.25);
@@ -66,17 +63,20 @@ void App::keyDown(unsigned char key, float x, float y){
         Background->playOnce();
         Balloon->playOnce();
         CopCar[0]->playOnce();
-        PlaneFront ->playOnce();
         for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->playOnce();
-    }
         TaxiFront->playOnce();
-       // Coin[0]->playOnce();          // Uncomment
+        Coin[0]->playOnce();  
+    }
+                
     }
 
     if(key == 'a'){
-    
-       
+      cout<<"'a' is being pressed"<<endl; 
+    }
+
+     if(key == 'd'){
+      cout<<"'d' is being pressed"<<endl; 
     }
 }
 
@@ -85,10 +85,9 @@ App::~App(){
     delete TaxiFront;
     delete Background;
     delete Balloon;
-    delete PlaneFront;
     delete CopCar[0];
     delete RedCar[0];
-   // delete Coin[0];           // Uncomment
+    delete Coin[0];           // Uncomment
 }
 
 
