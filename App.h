@@ -8,12 +8,15 @@ using namespace std;
 
 
 class App: public GlutApp {
+    bool left;
+    bool right;
+    bool start;
     AnimatedRect* TaxiFront;        //TaxiFront
     vector<AnimatedRect*> RedCar;   //RedCar
     AnimatedRect* Background;       //Background
     vector<AnimatedRect*> Coin;     //Coin
     AnimatedRect* Balloon;          //Ballon
-    vector<AnimatedRect*> CopCar;   //CopCar
+    AnimatedRect* CopCar;   //CopCar
     //adding a comment to test sublime merge program
 public:
     App(int argc, char** argv);
@@ -21,6 +24,8 @@ public:
     void draw();
     
     void keyDown(unsigned char key, float x, float y);
+
+    void idle();
     
     ~App();
     

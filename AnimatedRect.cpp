@@ -36,6 +36,7 @@ AnimatedRect::AnimatedRect (const char* map_filename, int rows, int cols, int ra
     animating = false;
     loop = false;
     
+    
     setRate(rate);
     start();
 }
@@ -47,7 +48,7 @@ bool AnimatedRect::done() {
 
 void AnimatedRect::draw(float z){
     if (animating){
-        glBindTexture( GL_TEXTURE_2D, "bitcoin-icon.bmp");
+        glBindTexture( GL_TEXTURE_2D, texture_id );
         glEnable(GL_TEXTURE_2D);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         

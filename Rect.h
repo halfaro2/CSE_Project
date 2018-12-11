@@ -12,7 +12,7 @@
 #include <iostream>
 
 class Rect{
-protected:
+public:
     float x;
     float y;
     float w;
