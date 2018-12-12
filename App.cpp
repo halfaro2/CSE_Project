@@ -6,14 +6,7 @@ using namespace std;
 
 
 App::App(int argc, char** argv): GlutApp(argc, argv){
-    bool left = false; //checks if 'a' has been pressed 
-    bool right = false; //checks if 'd' has been pressed
-    bool start = false; //initializes the start of the game
-    
-    int CenterLaneX = -.275;
-    int LeftLaneX = -.99;
-    int RightLaneX = .60;
-    
+   
     // first value row
     // second value column
     // third value is the rate
@@ -27,7 +20,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
 
     //the taxi (player)
-    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, .60, -0.6, 0.5, 0.5);    //TaxiFront
+    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -0.275, -0.6, 0.5, 0.5);    //TaxiFront
     
     Background = new AnimatedRect("background.png",1, 1, 100, -1, 1, 2, 2); 
 
@@ -74,22 +67,61 @@ void App::keyDown(unsigned char key, float x, float y){
                 
     }
 
-    //taxi goes left
-    if(key == 's'){
-        TaxiFront-> x = -.275;
-        cout<<"center"<<endl;
+
+    //going left
+    if(key == 'a'){
+        if(TaxiFront->x = -0.275 && TaxiFront->x != 0.6){
+            cout<<"going to left"<<endl;
+            TaxiFront->x = -1;
+            cout<<TaxiFront->x<<endl;
+            TaxiFront->playOnce();
+        }
+        else if(TaxiFront->x = 0.6){
+            cout<<"going to center"<<endl;
+            TaxiFront->x = -0.275;
+            cout<<TaxiFront->x<<endl;
+            TaxiFront->playOnce();
+        }
+
     }
 
-    //taxi goes right
+    //going right
     if(key == 'd'){
-        TaxiFront-> x = .60;
-        cout<<"right"<<endl;
+        if(TaxiFront->x = -0.275 && TaxiFront->x != -1){
+            cout<<"going to right"<<endl;
+            TaxiFront->x = 0.6;
+            cout<<TaxiFront->x<<endl;
+            TaxiFront->playOnce();
+        }
+        else if(TaxiFront->x = -1){
+            cout<<"going to center"<<endl;
+            TaxiFront->x = -0.275;
+            cout<<TaxiFront->x<<endl;
+            TaxiFront->playOnce();
+        }
     }
-    if(key == 'a'){
-        TaxiFront-> x = -.99;
-        cout<<"left"<<endl;
+
+
+
+
+
+
+    // //taxi goes left
+    // if(key == 's'){
+    //     TaxiFront-> x = -.275;
+    //     cout<<"center"<<endl;
+    // }
+
+    // //taxi goes right
+    // if(key == 'd'){
+    //     TaxiFront-> x = .60;
+    //     cout<<"right"<<endl;
+    // }
+    // if(key == 'a'){
+    //     TaxiFront-> x = -.99;
+    //     cout<<"left"<<endl;
        
-    }
+    // }
 
 }
 
