@@ -48,3 +48,7 @@ void TexRect::draw(float z) const {
     
     glDisable(GL_TEXTURE_2D);
 }
+
+bool TexRect::contains(float px, float py) const {
+    return px >= x && px <= x + w && py <= y && py >= y - h;
+}

@@ -3,24 +3,19 @@
 
 #include "GlutApp.h"
 #include "AnimatedRect.h"
+#include "Obstacles.h"
 #include <vector>
 using namespace std;
 
 
 class App: public GlutApp {
-    bool left;
-    bool right;
-    bool start;
-    int CenterLaneX;
-    int LeftLaneX;
-    int RightLaneX;
+   
     AnimatedRect* TaxiFront;        //TaxiFront
     vector<AnimatedRect*> RedCar;   //RedCar
-    AnimatedRect* Background;       //Background
     vector<AnimatedRect*> Coin;     //Coin
     AnimatedRect* Balloon;          //Ballon
     AnimatedRect* CopCar;   //CopCar
-    
+    TexRect* Background;
     //adding a comment to test sublime merge program
 public:
     App(int argc, char** argv);

@@ -14,16 +14,13 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     // fifth value is the Y position
     // sixth value is the width
     // seventh value is the height
-
-    //added coin for an extra 10 points  
-    //need to make them come later once the timer starts to not conflict with cars coming  
-    Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
+    
+    //background
+    Background = new TexRect("background.png",-1, 1, 2, 2); 
 
     //the taxi (player)
     TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -0.275, -0.6, 0.5, 0.5);    //TaxiFront
     
-    Background = new AnimatedRect("background.png",1, 1, 100, -1, 1, 2, 2); 
-
     //right lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.045, 0.4, 0.1, 0.1));
     //middle lane
@@ -31,6 +28,9 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //left lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, -0.14, 0.4, 0.1, 0.1));
     
+    //added coin for an extra 10 points  
+    //need to make them come later once the timer starts to not conflict with cars coming  
+    Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
     
    
   
@@ -39,8 +39,8 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
 
 void App::draw() {
 
-    Background->draw2(0.15);
-    TaxiFront->draw2(0.25); 
+    Background->draw(0.15);
+    TaxiFront->draw(0.25); 
     TaxiFront->playOnce();
     Coin[0]->draw(0.55);
 
@@ -58,7 +58,7 @@ void App::keyDown(unsigned char key, float x, float y){
     
     if (key == ' '){
        cout<< "Start Game"<< endl;
-       start = true;       
+              
         
         for(int i = 0; i < RedCar.size(); i++){
             RedCar[i]->playOnce();
@@ -127,10 +127,6 @@ void App::keyDown(unsigned char key, float x, float y){
 
 void App::idle(){  
     //cout<<"idle"<<endl;
-    
-    
-    
-    
     
 }
 

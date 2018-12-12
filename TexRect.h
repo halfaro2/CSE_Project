@@ -22,7 +22,9 @@ protected:
 public:
     TexRect(const char*, float, float, float, float);
     
-    void draw(float z) const;
+   virtual void draw(float z) const;
+
+   bool contains(float, float) const;
 };
 
 #endif
