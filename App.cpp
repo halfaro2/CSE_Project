@@ -77,29 +77,33 @@ void App::keyDown(unsigned char key, float x, float y){
     //taxi goes left
     if(key == 'a'){
         cout<<"left"<<endl;
-        if(TaxiFront-> x == -.275){
+        if(TaxiFront-> x = -.275){
             cout<<"Taxi in center"<<endl;
             TaxiFront-> x = -.99;
             cout<<"Taxi in left"<<endl;
-            left = false;
+        
         }
-        if(TaxiFront-> x == .60){
+        else if(TaxiFront-> x = -.99){
             TaxiFront-> x = -.275;
-            left = false;
+        }
+        else if(TaxiFront-> x = .60){
+            TaxiFront-> x = -.275;
         }
     }
 
     //taxi goes right
     if(key == 'd'){
         cout<<"right"<<endl;
-        if(TaxiFront-> x == -.275){
+        if(TaxiFront-> x = -.275){
             TaxiFront-> x = .60;
-            right = false;
         }
-        if(TaxiFront-> x == -.99){
+        else if(TaxiFront-> x = .60){
             TaxiFront-> x = -.275;
-            right = false;
-        }    }
+        }
+        else if(TaxiFront-> x = -.99){
+            TaxiFront-> x = -.275;
+        }    
+    }
 }
 
 void App::idle(){  
