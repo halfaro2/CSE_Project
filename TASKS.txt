@@ -1,0 +1,6 @@
+Tasks For Game
+1. Object (incoming cars) movement
+2. coin movement
+3. car smooth side to side movement
+4. timer display
+5. score display
