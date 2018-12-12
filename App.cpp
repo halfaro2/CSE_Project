@@ -58,7 +58,7 @@ void App::keyDown(unsigned char key, float x, float y){
     
     if (key == ' '){
        cout<< "Start Game"<< endl;
-              
+        
         
         for(int i = 0; i < RedCar.size(); i++){
             RedCar[i]->playOnce();
@@ -128,6 +128,10 @@ void App::keyDown(unsigned char key, float x, float y){
 void App::idle(){  
     //cout<<"idle"<<endl;
     
+}
+
+void App::displayTimer(){
+
 }
 
 App::~App(){

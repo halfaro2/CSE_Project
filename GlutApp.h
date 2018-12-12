@@ -68,6 +68,8 @@ public:
     virtual void idle(){}
     
     virtual void timer(){}
+
+    virtual void displayTimer(){} // creates visual timer
     
     virtual ~GlutApp(){}
 };

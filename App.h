@@ -3,7 +3,6 @@
 
 #include "GlutApp.h"
 #include "AnimatedRect.h"
-#include "Obstacles.h"
 #include <vector>
 using namespace std;
 
@@ -23,6 +22,10 @@ public:
     void keyDown(unsigned char key, float x, float y);
 
     void idle();
+
+    void timerStart();
+
+    void displayTimer();
     
     ~App();
     
