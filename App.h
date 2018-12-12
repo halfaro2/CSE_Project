@@ -17,6 +17,7 @@ class App: public GlutApp {
     vector<AnimatedRect*> Coin;     //Coin
     AnimatedRect* Balloon;          //Ballon
     AnimatedRect* CopCar;   //CopCar
+    
     //adding a comment to test sublime merge program
 public:
     App(int argc, char** argv);

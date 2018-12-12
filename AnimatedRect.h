@@ -25,7 +25,7 @@ public:
     
     AnimatedRect (const char*, int, int, int, float, float, float, float);
     
-    void draw(float z);
+    virtual void draw(float z);
 
     void draw2(float z){
         glBindTexture( GL_TEXTURE_2D, texture_id );

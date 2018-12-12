@@ -22,23 +22,20 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //need to make them come later once the timer starts to not conflict with cars coming  
     Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
 
-    //background of the game
-    Background = new AnimatedRect("newroad.png", 1, 1, 100, -1, 1, 2, 2);       //Background
-
     //the taxi (player)
     TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -.275, -0.6, 0.5, 0.5);    //TaxiFront
     
+    Background = new AnimatedRect("background.png",1, 1, 100, -1, 1, 2, 2); 
+
     //right lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.045, 0.4, 0.1, 0.1));
     //middle lane
     RedCar.push_back(new AnimatedRect("Car-Front-Red-icon.png", 1, 1, 10, -0.045, 0.4, 0.1, 0.1));
     //left lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, -0.14, 0.4, 0.1, 0.1));
-    //balloon in background 
-    Balloon = new AnimatedRect("balloon.png", 1, 1, 100, 0.5, .8, 0.15, 0.15);  //Ballon
-    //cop car on side of the road
-    CopCar = new AnimatedRect("copcar.png", 1, 1, 10, -0.4, 0.4, 0.15, 0.15);  //CopCar
     
+    
+   
   
 
 }
@@ -46,10 +43,8 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
 void App::draw() {
 
     Background->draw2(0.15);
-    TaxiFront->draw2(0.25);
+    TaxiFront->draw2(0.25); 
     TaxiFront->playOnce();
-    CopCar->draw2(0.25);
-    Balloon->draw2(0.25);    
     Coin[0]->draw(0.55);
 
     for(int i = 0; i < RedCar.size(); i++){
@@ -94,15 +89,36 @@ void App::keyDown(unsigned char key, float x, float y){
 void App::idle(){  
     cout<<"idle"<<endl;
     
-    while(left){
-    TaxiFront->x -=.03;
-    left = false;   
+    
+    
+    if(left == true){
+        if(TaxiFront->x = .6){
+        TaxiFront->x = -.99;
+        left = false;
+        }
+        else{
+            TaxiFront->x = -.275;
+            left = false;
+        }
     }
 
-    while(right && TaxiFront->x != .5){
-    TaxiFront->x +=.03;
-    right = false;
+
+    if(right == true){
+        if(TaxiFront->x != -.99){
+            TaxiFront->x = .6;
+            left = false;
+        }
+        else{
+            TaxiFront->x = -.275;
+            left = false;
+        }
     }
+
+
+    
+       
+    
+
 
 
 
@@ -113,8 +129,6 @@ App::~App(){
     std::cout << "Exiting..." << std::endl;
     delete TaxiFront;
     delete Background;
-    delete Balloon;
-    delete CopCar;
     delete RedCar[0];
     delete Coin[0];           // Uncomment
 }
