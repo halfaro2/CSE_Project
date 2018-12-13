@@ -16,10 +16,12 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     // seventh value is the height
     
     //background
-    Background = new TexRect("background.png",-1, 1, 2, 2); 
+    Background = new TexRect("CityBackground.bmp",-1, 1, 2, 2);
 
     //the taxi (player)
-    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -0.275, -0.6, 0.5, 0.5);    //TaxiFront
+    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, .1, -0.6, 0.5, 0.5);    //TaxiFront
+    //-0.6 left
+    //.1
     
     //right lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.045, 0.4, 0.1, 0.1));
@@ -67,16 +69,17 @@ void App::keyDown(unsigned char key, float x, float y){
                 
     }
 
-
+    TaxiFront -> x = -0.275;
+    
     //going left
     if(key == 'a'){
-        if(TaxiFront->x = -0.275 && TaxiFront->x != 0.6){
+        if(TaxiFront->x == -0.275 && TaxiFront->x != 0.6){
             cout<<"going to left"<<endl;
             TaxiFront->x = -1;
             cout<<TaxiFront->x<<endl;
             TaxiFront->playOnce();
         }
-        else if(TaxiFront->x = 0.6){
+        else if(TaxiFront->x == 0.6){
             cout<<"going to center"<<endl;
             TaxiFront->x = -0.275;
             cout<<TaxiFront->x<<endl;
@@ -87,13 +90,13 @@ void App::keyDown(unsigned char key, float x, float y){
 
     //going right
     if(key == 'd'){
-        if(TaxiFront->x = -0.275 && TaxiFront->x != -1){
+        if(TaxiFront->x == -0.275 && TaxiFront->x != -1){
             cout<<"going to right"<<endl;
             TaxiFront->x = 0.6;
             cout<<TaxiFront->x<<endl;
             TaxiFront->playOnce();
         }
-        else if(TaxiFront->x = -1){
+        else if(TaxiFront->x == -1){
             cout<<"going to center"<<endl;
             TaxiFront->x = -0.275;
             cout<<TaxiFront->x<<endl;
