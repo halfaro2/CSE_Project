@@ -21,7 +21,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //the taxi (player)
     TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, .1, -0.6, 0.5, 0.5);    //TaxiFront
     //-0.6 left
-    //.1
+    //.1 right
     
     //right lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.045, 0.4, 0.1, 0.1));
@@ -69,63 +69,16 @@ void App::keyDown(unsigned char key, float x, float y){
                 
     }
 
-    TaxiFront -> x = -0.275;
+   
     
     //going left
     if(key == 'a'){
-        if(TaxiFront->x == -0.275 && TaxiFront->x != 0.6){
-            cout<<"going to left"<<endl;
-            TaxiFront->x = -1;
-            cout<<TaxiFront->x<<endl;
-            TaxiFront->playOnce();
-        }
-        else if(TaxiFront->x == 0.6){
-            cout<<"going to center"<<endl;
-            TaxiFront->x = -0.275;
-            cout<<TaxiFront->x<<endl;
-            TaxiFront->playOnce();
-        }
-
+        TaxiFront-> x = -.6;
     }
-
     //going right
     if(key == 'd'){
-        if(TaxiFront->x == -0.275 && TaxiFront->x != -1){
-            cout<<"going to right"<<endl;
-            TaxiFront->x = 0.6;
-            cout<<TaxiFront->x<<endl;
-            TaxiFront->playOnce();
-        }
-        else if(TaxiFront->x == -1){
-            cout<<"going to center"<<endl;
-            TaxiFront->x = -0.275;
-            cout<<TaxiFront->x<<endl;
-            TaxiFront->playOnce();
-        }
+        TaxiFront-> x = .1;
     }
-
-
-
-
-
-
-    // //taxi goes left
-    // if(key == 's'){
-    //     TaxiFront-> x = -.275;
-    //     cout<<"center"<<endl;
-    // }
-
-    // //taxi goes right
-    // if(key == 'd'){
-    //     TaxiFront-> x = .60;
-    //     cout<<"right"<<endl;
-    // }
-    // if(key == 'a'){
-    //     TaxiFront-> x = -.99;
-    //     cout<<"left"<<endl;
-       
-    // }
-
 }
 
 void App::idle(){  
