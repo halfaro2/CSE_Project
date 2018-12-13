@@ -11,6 +11,9 @@ class App: public GlutApp {
     bool left;
     bool right;
     bool start;
+    int CenterLaneX;
+    int LeftLaneX;
+    int RightLaneX;
     AnimatedRect* TaxiFront;        //TaxiFront
     vector<AnimatedRect*> RedCar;   //RedCar
     AnimatedRect* Background;       //Background

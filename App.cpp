@@ -9,7 +9,11 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     bool left = false; //checks if 'a' has been pressed 
     bool right = false; //checks if 'd' has been pressed
     bool start = false; //initializes the start of the game
-
+    
+    int CenterLaneX = -.275;
+    int LeftLaneX = -.99;
+    int RightLaneX = .60;
+    
     // first value row
     // second value column
     // third value is the rate
@@ -73,56 +77,38 @@ void App::keyDown(unsigned char key, float x, float y){
     //taxi goes left
     if(key == 'a'){
         cout<<"left"<<endl;
-        left = true;      
+        if(TaxiFront-> x == -.275){
+            cout<<"Taxi in center"<<endl;
+            TaxiFront-> x = -.99;
+            cout<<"Taxi in left"<<endl;
+            left = false;
+        }
+        if(TaxiFront-> x == .60){
+            TaxiFront-> x = -.275;
+            left = false;
+        }
     }
 
     //taxi goes right
     if(key == 'd'){
         cout<<"right"<<endl;
-        right = true; 
-    }
-
-
-    
+        if(TaxiFront-> x == -.275){
+            TaxiFront-> x = .60;
+            right = false;
+        }
+        if(TaxiFront-> x == -.99){
+            TaxiFront-> x = -.275;
+            right = false;
+        }    }
 }
 
 void App::idle(){  
-    cout<<"idle"<<endl;
+    //cout<<"idle"<<endl;
     
     
     
-    if(left == true){
-        if(TaxiFront->x = .6){
-        TaxiFront->x = -.99;
-        left = false;
-        }
-        else{
-            TaxiFront->x = -.275;
-            left = false;
-        }
-    }
-
-
-    if(right == true){
-        if(TaxiFront->x != -.99){
-            TaxiFront->x = .6;
-            left = false;
-        }
-        else{
-            TaxiFront->x = -.275;
-            left = false;
-        }
-    }
-
-
     
-       
     
-
-
-
-
-
 }
 
 App::~App(){
