@@ -15,6 +15,8 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     // sixth value is the width
     // seventh value is the height
     
+    bool start =  false;
+
   //background
     Background = new TexRect("CityBackground.bmp",-1, 1, 2, 2);
 
@@ -24,7 +26,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //.1
     
     //left lane
-    RedCar.push_back(new AnimatedRect("Car-Front-Red-icon.png", 1, 1, 10, -0.1, 0.04, 0.12, 0.12));
+    RedCar.push_back(new AnimatedRect("red-tesla.png", 1, 1, 10, -0.1, 0.03 , 0.1, 0.1));
 
     //right lane
     RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.01, 0.03, 0.1, 0.1));
@@ -32,7 +34,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //added coin for an extra 10 points  
     //need to make them come later once the timer starts to not conflict with cars coming  
     Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, .5, .15, .15));
-    
+     
    
   
 
@@ -60,11 +62,13 @@ void App::keyDown(unsigned char key, float x, float y){
     if (key == ' '){
        cout<< "Start Game"<< endl;
         
-        
         for(int i = 0; i < RedCar.size(); i++){
             RedCar[i]->playOnce();
             Coin[0]->playOnce();  
-          }
+          }       
+
+        start = true;
+
                 
     }
 

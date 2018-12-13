@@ -8,7 +8,7 @@ using namespace std;
 
 
 class App: public GlutApp {
-   
+    bool start;
     AnimatedRect* TaxiFront;        //TaxiFront
     vector<AnimatedRect*> RedCar;   //RedCar
     vector<AnimatedRect*> Coin;     //Coin
