@@ -75,35 +75,19 @@ void App::keyDown(unsigned char key, float x, float y){
     }
 
     //taxi goes left
-    if(key == 'a'){
-        cout<<"left"<<endl;
-        if(TaxiFront-> x = -.275){
-            cout<<"Taxi in center"<<endl;
-            TaxiFront-> x = -.99;
-            cout<<"Taxi in left"<<endl;
-        
-        }
-        else if(TaxiFront-> x = -.99){
-            TaxiFront-> x = -.275;
-        }
-        else if(TaxiFront-> x = .60){
-            TaxiFront-> x = -.275;
-        }
+    if(key == 's'){
+        TaxiFront-> x = -.275;
     }
 
     //taxi goes right
     if(key == 'd'){
-        cout<<"right"<<endl;
-        if(TaxiFront-> x = -.275){
-            TaxiFront-> x = .60;
-        }
-        else if(TaxiFront-> x = .60){
-            TaxiFront-> x = -.275;
-        }
-        else if(TaxiFront-> x = -.99){
-            TaxiFront-> x = -.275;
-        }    
+        TaxiFront-> x = .60;
     }
+    if(key == 'a'){
+        TaxiFront-> x = -.99;
+       
+    }
+
 }
 
 void App::idle(){  
