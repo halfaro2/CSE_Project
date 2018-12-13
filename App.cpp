@@ -27,7 +27,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, 0, .15, .15));
 
     //the taxi (player)
-    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, -.275, -0.6, 0.5, 0.5);    //TaxiFront
+    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, .60, -0.6, 0.5, 0.5);    //TaxiFront
     
     Background = new AnimatedRect("background.png",1, 1, 100, -1, 1, 2, 2); 
 
@@ -77,14 +77,17 @@ void App::keyDown(unsigned char key, float x, float y){
     //taxi goes left
     if(key == 's'){
         TaxiFront-> x = -.275;
+        cout<<"center"<<endl;
     }
 
     //taxi goes right
     if(key == 'd'){
         TaxiFront-> x = .60;
+        cout<<"right"<<endl;
     }
     if(key == 'a'){
         TaxiFront-> x = -.99;
+        cout<<"left"<<endl;
        
     }
 
