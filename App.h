@@ -11,10 +11,11 @@ class App: public GlutApp {
     bool start;
     bool gameOver;
     TexRect* TaxiFront;        //TaxiFront
-    vector<AnimatedRect*> RedCar;   //RedCar
+    vector<TexRect*> RedCar;   //RedCar
     vector<TexRect*> Coin;     //Coin
     vector<AnimatedRect*> GameOver;
     TexRect* Background;
+    AnimatedRect* fastExplosion;
     //adding a comment to test sublime merge program
 public:
     App(int argc, char** argv);
@@ -31,9 +32,10 @@ public:
 
     void reset();
 
-    void moveObjects();
+   
     
     void collision();
+    
     
     ~App();
     
