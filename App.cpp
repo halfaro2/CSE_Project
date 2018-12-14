@@ -24,7 +24,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     bool gameOver = false;
     bool start =  false;
 
-    GameOver.push_back(new AnimatedRect("game.jpg", 1, 1, 100,-0.1, 0.03 , 0.1, 0.1));
+    GameOver = new AnimatedRect("game.jpg", 1, 1, 100,-.8, .8 , 1.5, 1.5);
   
 
   //background
@@ -45,15 +45,6 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     RedCar.push_back(new TexRect("blue-tesla.png",0.01, 0.03, 0.1, 0.1));
     
     fastExplosion = new AnimatedRect("fireball.bmp", 6, 6, 10, 0.1, -0.6, 0.5, 0.5);
-    
-<<<<<<< HEAD
-    //added coin for an extra 10 points  
-    //need to make them come later once the timer starts to not conflict with cars coming  
-    Coin.push_back(new TexRect("bitcoin-icon.bmp", -.090, 0.1, .15, .15));
-     
-    
-=======
->>>>>>> origin/master
 
 }
 
@@ -62,7 +53,8 @@ void App::draw() {
     Background->draw(0.15);
     TaxiFront->draw(0.25);
     fastExplosion->draw(0.30);
-    
+    GameOver->draw(0.55);
+    GameOver->playOnce();
 
     for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->draw(0.25);
@@ -86,10 +78,23 @@ void App::keyDown(unsigned char key, float x, float y){
             RedCar[0]->x -= 0.1;
             RedCar[0]->y -= 0.126;
             RedCar[0]->Redraw(0.25);
+            //going left
+                if(key == 'a'){
+                    cout<<"left"<<endl;
+                    TaxiFront-> x = -.6;
+                    TaxiFront->Redraw(0.25);
+                }
+                //going right
+                if(key == 'd'){
+                    cout<<"right"<<endl;
+                    TaxiFront-> x = .1;
+                    TaxiFront->Redraw(0.25);
+                    // RedCar[0]->x = TaxiFront ->x;
+                    // RedCar[0]->y = TaxiFront -> y;
+                    // collision();
+                }
             }
-            if ((RedCar[0] -> x == -.6 ) && (RedCar[0] ->y == -.6)) {
-                break;
-            }
+
         }
                     
     }
@@ -174,7 +179,8 @@ App::~App(){
     delete TaxiFront;
     delete Background;
     delete RedCar[0];
-    delete Coin[0];
+    delete RedCar[0];
+    delete GameOver;
     delete fastExplosion;
 }
 
