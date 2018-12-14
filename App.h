@@ -16,6 +16,8 @@ class App: public GlutApp {
     AnimatedRect* GameOver;
     TexRect* Background;
     AnimatedRect* fastExplosion;
+    
+    
     //adding a comment to test sublime merge program
 public:
     App(int argc, char** argv);
