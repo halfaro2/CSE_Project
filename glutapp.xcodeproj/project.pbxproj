@@ -28,6 +28,8 @@
 		D2CB657F21B4B4F800815977 /* Taxi-Back-Yellow-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */; };
 		D2CB658121B4BBB800815977 /* bitcoin-icon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */; };
 		D2D364A021C36D1B007A9A1F /* red-tesla.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D3649F21C36D14007A9A1F /* red-tesla.png */; };
+		D2D364A721C3D9D6007A9A1F /* download.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D364A621C3D9D0007A9A1F /* download.png */; };
+		D2D364A921C3DAA8007A9A1F /* blue-tesla.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D364A821C3DAA1007A9A1F /* blue-tesla.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				D2D364A921C3DAA8007A9A1F /* blue-tesla.png in CopyFiles */,
+				D2D364A721C3D9D6007A9A1F /* download.png in CopyFiles */,
 				D2D364A021C36D1B007A9A1F /* red-tesla.png in CopyFiles */,
 				D21A801121C1D47300276CEC /* background.png in CopyFiles */,
 				D2A39A1521B60DFD009E9B28 /* Airplane-Front-Red-icon.png in CopyFiles */,
@@ -91,6 +95,8 @@
 		D2CB657C21B4B4E900815977 /* Taxi-Back-Yellow-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "Taxi-Back-Yellow-icon.bmp"; sourceTree = "<group>"; };
 		D2CB658021B4BBAC00815977 /* bitcoin-icon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "bitcoin-icon.bmp"; sourceTree = "<group>"; };
 		D2D3649F21C36D14007A9A1F /* red-tesla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-tesla.png"; sourceTree = "<group>"; };
+		D2D364A621C3D9D0007A9A1F /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
+		D2D364A821C3DAA1007A9A1F /* blue-tesla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-tesla.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +119,10 @@
 			children = (
 				D20D67E821AF3EA50000CB54 /* fireball.bmp */,
 				D21A801021C1D46B00276CEC /* background.png */,
+				D2D364A621C3D9D0007A9A1F /* download.png */,
 				D2D3649F21C36D14007A9A1F /* red-tesla.png */,
 				D2A39A1421B60DF4009E9B28 /* Airplane-Front-Red-icon.png */,
+				D2D364A821C3DAA1007A9A1F /* blue-tesla.png */,
 				D2A39A1221B60C87009E9B28 /* copcar.png */,
 				D2A39A1021B5DD81009E9B28 /* balloon.png */,
 				D2A39A0E21B5DD5A009E9B28 /* newroad.png */,
