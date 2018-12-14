@@ -33,7 +33,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     
     //added coin for an extra 10 points  
     //need to make them come later once the timer starts to not conflict with cars coming  
-    Coin.push_back(new TexRect("bitcoin-icon.bmp", -.090, .5, .15, .15));
+    Coin.push_back(new TexRect("bitcoin-icon.bmp", -.090, 0.1, .15, .15));
      
    
   
@@ -64,11 +64,8 @@ void App::keyDown(unsigned char key, float x, float y){
     
     if (key == ' '){
        cout<< "Start Game"<< endl;
-             
-
-        start = true;
-
-                
+       start = true;
+        idle();                     
     }
 
    
@@ -87,15 +84,15 @@ void App::keyDown(unsigned char key, float x, float y){
     }
 }
 
-void App::idle(){  
 
-    while(start){
-
-    }
-
-
+void App::moveObjects(){
     
+
+
+       
 }
+
+
 
 void collision(float px, float py){
         
@@ -106,6 +103,27 @@ void collision(float px, float py){
      //  gameOver = true;
      //  }
 
+}
+
+void App::idle(){  
+
+     if(start == true){
+        for(float i = 0.100; i > -0.800; i = i-0.1){
+            for(float j = -0.1; j > -0.6; j = j-0.1){
+            cout<<"car and coin going down"<<endl;
+            RedCar[0]->y = i;
+            RedCar[0]->x = j;
+            RedCar[0]->w +=0.001;
+            RedCar[0]->h +=0.001;
+            RedCar[0]->Redraw(0.25);
+            //Coin[0]->y = i;
+            //Coin[0]->Redraw(0.25);
+            }
+        }
+       }
+
+
+    
 }
 
 

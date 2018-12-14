@@ -27,6 +27,8 @@ public:
     void timerStart();
 
     void displayTimer();
+
+    void moveObjects();
     
     ~App();
     
