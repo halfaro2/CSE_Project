@@ -32,6 +32,8 @@ public:
 
     void moveObjects();
     
+    void collision();
+    
     ~App();
     
 };

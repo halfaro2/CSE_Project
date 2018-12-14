@@ -92,12 +92,16 @@ void App::moveObjects(){
 
 
 
-void collision(float px, float py){
+void App:: collision(){
         
-     // if (isGameOver()){
-     //  cout << "Game Over!" << endl;
-     //  gameOver = true;
-     //  }
+    if((RedCar[0] -> x == -.06), RedCar[0] -> x == 0.5){
+        cout<<"Exiting game[Left Collision]"<<endl;
+        exit(0);
+    }
+    if((RedCar[0] -> x == 0.1), RedCar[0] -> y == 0.5){
+        cout<<"Exiting game[Right Collision]"<<endl;
+        exit(0);
+    }
 
 }
 
