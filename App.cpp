@@ -24,7 +24,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     bool gameOver = false;
     bool start =  false;
 
-    GameOver = new AnimatedRect("game.jpg", 1, 1, 100,-.8, .8 , 1.5, 1.5);
+    GameOver = new AnimatedRect("download.png", 1, 1, 100,-.7, .8 , 1.5, 1.5);
   
 
   //background
@@ -54,7 +54,7 @@ void App::draw() {
     TaxiFront->draw(0.25);
     fastExplosion->draw(0.30);
     GameOver->draw(0.55);
-    GameOver->playOnce();
+    
 
     for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->draw(0.25);
@@ -110,9 +110,9 @@ void App::keyDown(unsigned char key, float x, float y){
         cout<<"right"<<endl;
         TaxiFront-> x = .1;
         TaxiFront->Redraw(0.25);
-        // RedCar[0]->x = TaxiFront ->x;
-        // RedCar[0]->y = TaxiFront -> y;
-        // collision();
+        RedCar[0]->x = TaxiFront ->x;
+        RedCar[0]->y = TaxiFront -> y;
+        collision();
     }
 
     if(key == 'n'){
@@ -137,24 +137,21 @@ void App::collision(){
     if(RedCar[0]->x == TaxiFront->x && RedCar[0]->y == TaxiFront->y){
         cout<<"Exiting game[Left Collision]"<<endl;
         fastExplosion->playLoop();
+        GameOver->playOnce();
+
         
     }
     if((RedCar[0] -> x == 0.1) && RedCar[0] -> y == 0.5){
         cout<<"Exiting game[Right Collision]"<<endl;
         fastExplosion->playOnce();
-        exit(0);
+        GameOver->playOnce();
+        
     }
 
 }
 
 void App::idle(){  
-//    while(start == true){
-//        cout<<"decreasing values"<<endl;
-//        RedCar[0]->x -= 0.1;
-//        RedCar[0]->y -= 0.126;
-//        RedCar[0]->Redraw(0.25);
-//}
-        glutPostRedisplay();
+
 }
 
 
