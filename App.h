@@ -28,6 +28,8 @@ public:
 
     void displayTimer();
 
+    void reset();
+
     void moveObjects();
     
     ~App();

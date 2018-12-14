@@ -22,8 +22,8 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
 
     //the taxi (player)
     TaxiFront = new TexRect("Taxi-Back-Yellow-icon.bmp", .1, -0.6, 0.5, 0.5);    //TaxiFront
-    //-0.6 left
-    //0.1  right
+    //-0.6 left  (-0.6, -0.6)
+    //0.1  right (0.1, -0.6)
     
     //left lane
     RedCar.push_back(new TexRect("red-tesla.png",-0.1, 0.03 , 0.1, 0.1));
@@ -67,12 +67,8 @@ void App::keyDown(unsigned char key, float x, float y){
        start = true;
         idle();                     
     }
-
-   
     
     //going left
-   
-    if(start == true){
     if(key == 'a'){
         cout<<"left"<<endl;
         TaxiFront-> x = -.6;
@@ -85,7 +81,7 @@ void App::keyDown(unsigned char key, float x, float y){
         TaxiFront->Redraw(0.25);
     }
 }
-}
+
 
 void App::moveObjects(){
     
@@ -98,36 +94,47 @@ void App::moveObjects(){
 
 void collision(float px, float py){
         
-
-
      // if (isGameOver()){
      //  cout << "Game Over!" << endl;
      //  gameOver = true;
      //  }
-    
-    
 
 }
 
 void App::idle(){  
 
-//     if(start == true){
-//        for(float i = 0.100; i > -0.800; i = i-0.1){
-//            for(float j = -0.1; j > -0.6; j = j-0.1){
-//            cout<<"car and coin going down"<<endl;
-//            RedCar[0]->y = i;
-//            RedCar[0]->x = j;
-//            RedCar[0]->w +=0.001;
-//            RedCar[0]->h +=0.001;
-//            RedCar[0]->Redraw(0.25);
-//            //Coin[0]->y = i;
-//            //Coin[0]->Redraw(0.25);
-//            }
-//        }
-//       }
+     if(start == true){
+ 
+        for(int i = 0; i < 5; i++){
+           
+            cout<<"car and coin going down"<<endl;
+            RedCar[0]->y -= 0.18;
+            RedCar[0]->x -= .1;
+            RedCar[0]->w += .1;
+            RedCar[0]->h += .1;
+            RedCar[0]->Redraw(0.25);
+            
+            
+
+        }
+
+        reset();
+
+
+    }
 
 
     
+}
+
+
+void App::reset(){
+
+    RedCar[0]->x = -0.1;
+    RedCar[0]->y = 0.03;
+    RedCar[0]-> w = 0.1;
+    RedCar[0]-> h = 0.1;
+
 }
 
 

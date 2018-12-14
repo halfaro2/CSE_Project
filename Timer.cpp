@@ -10,7 +10,7 @@ void Timer::repeat(Timer* self){
 }
 
 Timer::Timer() {
-    interval = 1000;
+    interval = 1;
     running = false;
     
 }
