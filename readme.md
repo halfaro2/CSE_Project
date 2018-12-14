@@ -1,6 +1,10 @@
 Crazy Taxi OpenGl Game
 ----------------------
-Currently this game is a three person player game. The objective of this game is to not get hit by incoming car traffic. The way to control the taxi is by using the 'a' key to move it to the left lane and 'd' to move it over to the right lane. The incoming cars are two different teslas, a blue tesla(right lane) and a red tesla(left lane). The tesla are supposed to move by themselves but they are currently user controlled to 5 different positions on the road. To move the red tesla the user uses the keys '1'-'5' and to move the blue tesla keys '6'-'0' are pressed.
+Currently this game is a three person player game
+The objective of this game is to not get hit by incoming car traffic.
+The way to control the taxi is by using the 'a' key to move it to the left lane and 'd' to move it over to the right lane. The incoming cars are two different teslas, a blue tesla(right lane) and a red tesla(left lane).
+The tesla are supposed to move by themselves but they are currently user controlled to 5 different positions on the road.
+To move the red tesla the user uses the keys '1'-'5' and to move the blue tesla keys '6'-'0' are pressed.
 
 FREEGLUTAPP
 -----------
