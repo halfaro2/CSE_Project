@@ -45,17 +45,14 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //right lane
     RedCar.push_back(new TexRect("blue-tesla.png",0.01, 0.03, 0.1, 0.1));
     
-    fastExplosion1 = new AnimatedRect("explosion-sprite.png", 3, 4, 10, 0.1, -0.6, 0.5, 0.5);
+    fastExplosion1 = new AnimatedRect("explosion-sprite.png", 3, 5, 50, 0.1, -0.6, 0.5, 0.5);
 
-    fastExplosion2 = new AnimatedRect("explosion-sprite.png", 3, 4, 10, -0.6, -0.6, 0.5, 0.5);
+    fastExplosion2 = new AnimatedRect("explosion-sprite.png", 3, 5, 50, -0.6, -0.6, 0.5, 0.5);
 
 
     
 
-    //added coin for an extra 10 points  
-    //need to make them come later once the timer starts to not conflict with cars coming  
-    
-     
+   
     
 
 
@@ -66,8 +63,8 @@ void App::draw() {
 
     Background->draw(0.15);
     TaxiFront->draw(0.25);
-    RedCar[0]->draw(0.30);
-    RedCar[1]->draw(0.30);
+    RedCar[0]->draw(0.25);
+    RedCar[1]->draw(0.25);
     fastExplosion1->draw(0.33);
     fastExplosion2->draw(0.33);
     GameOver->draw(0.55);
@@ -241,17 +238,33 @@ void App::collision(){
         
     if(RedCar[0]->x == TaxiFront->x && RedCar[0]->y == TaxiFront->y){
         cout<<"Exiting game[Left Collision]"<<endl;
-        fastExplosion2->playLoop();
+        fastExplosion2->playOnce();
         GameOver->playOnce();
+
+        RedCar[0]->x = -10;
+        RedCar[0]->y = -10;
+
+
+        TaxiFront->x = -10;
+        TaxiFront->y = -10;
+
 
         
     }
     if(RedCar[1]->x == TaxiFront->x && RedCar[1]->y == TaxiFront->y){
         cout<<"Exiting game[Right Collision]"<<endl;
-        fastExplosion1->playLoop();
+        fastExplosion1->playOnce();
         GameOver->playOnce();
+
+        RedCar[1]->x = -10;
+        RedCar[1]->y = -10;
+
+        TaxiFront->x = -10;
+        TaxiFront->y = -10;
         
     }
+
+
 
 }
 
