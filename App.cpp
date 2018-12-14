@@ -6,8 +6,6 @@
 using namespace std;
 
 
-unsigned int microseconds = 600000;
-
 App::App(int argc, char** argv): GlutApp(argc, argv){
    
     // first value row
@@ -54,13 +52,13 @@ void App::keyDown(unsigned char key, float x, float y){
     
     if (key == ' '){
        cout<< "Start Game"<< endl;
-       fastExplosion1->playLoop();
+
 
     }
     
    
     if(key == 'a'){ //GO LEFT
-        cout<<"left"<<endl;
+       
         TaxiFront-> x = -.6;
         TaxiFront->Redraw(0.25);
         collision(); 
@@ -68,7 +66,7 @@ void App::keyDown(unsigned char key, float x, float y){
     }
     
     if(key == 'd'){ //GO RIGHT
-        cout<<"right"<<endl;
+        
         TaxiFront-> x = .1;
         TaxiFront->Redraw(0.25);
         collision();
@@ -129,12 +127,11 @@ void App::keyDown(unsigned char key, float x, float y){
         
         RedCar[0]->w = .3;
         RedCar[0]->h = .3;
-
-        cout<<RedCar[0]->x<<endl;
-        cout<<RedCar[0]->y<<endl;
         
         RedCar[0]->Redraw(0.25);
          collision(); //CHECKS COLLISION
+         resetLeft();
+         RedCar[0]->Redraw(0.25);
         
     }
     if(key == '6'){ //GO TO FIRST POSITION OF BLUE
@@ -144,7 +141,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->w = .1;
         RedCar[1]->h = .1;
         
-        RedCar[0]->Redraw(0.25);
+        RedCar[1]->Redraw(0.25);
          collision(); //CHECKS COLLISION
     }
     if(key == '7'){ //GO TO SECOND POSITION OF BLUE
@@ -154,7 +151,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->w = .2;
         RedCar[1]->h = .2;
         
-        RedCar[0]->Redraw(0.25);
+        RedCar[1]->Redraw(0.25);
          collision(); //CHECKS COLLISION
     }
     if(key == '8'){ //GO TO THIRD POSITION OF THIRD
@@ -164,7 +161,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->w = .3;
         RedCar[1]->h = .3;
         
-        RedCar[0]->Redraw(0.25);
+        RedCar[1]->Redraw(0.25);
          collision(); //CHECKS COLLISION
     }
     if(key == '9'){ //GO TO FORTH POSITION OF BLUE
@@ -174,8 +171,9 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->w = .3;
         RedCar[1]->h = .3;
         
-        RedCar[0]->Redraw(0.25);
-         collision(); //CHECKS COLLISION
+        RedCar[1]->Redraw(0.25);
+        collision(); //CHECKS COLLISION
+         
     }
     if(key == '0'){ //GO TO FIFTH POSITION OF BLUE
         RedCar[1]->x = 0.1;
@@ -184,19 +182,13 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->w = .3;
         RedCar[1]->h = .3;
         
-        cout<<RedCar[0]->x<<endl;
-        cout<<RedCar[0]->y<<endl;
 
-        RedCar[0]->Redraw(0.25);
+        RedCar[1]->Redraw(0.25);
          collision(); //CHECKS COLLISION
-    }
-}
 
-void App::CarDown(){
-//    cout<<"decreasing values"<<endl;
-//    RedCar[0]->x -= 0.1;
-//    RedCar[0]->y -= 0.126;
-//    RedCar[0]->Redraw(0.25);
+         resetRight();
+         RedCar[1]->Redraw(0.25);
+    }
 }
 
 
@@ -205,30 +197,30 @@ void App::CarDown(){
 void App::collision(){
         
     if(RedCar[0]->x == TaxiFront->x && RedCar[0]->y == TaxiFront->y){ // CHECKS IF TAXI (X,Y) == RED CAR(X,Y)
-        cout<<"Exiting game[Left Collision]"<<endl;
+        cout<<"Game Over[Left Collision]"<<endl;
         fastExplosion2->playOnce(); //PLAYS EXPLOSIVE
         GameOver->playOnce(); //DISPLAY'S GAME OVER SCREEN
 
-        RedCar[0]->x = -10; //HIDES RED CAR
-        RedCar[0]->y = -10; //HIDES RED CAR
+        RedCar[0]->x = -10; //REMOVES RED CAR
+        RedCar[0]->y = -10; //REMOVES RED CAR
 
 
-        TaxiFront->x = -10; // HIDES TAXI
-        TaxiFront->y = -10; // HIDES TAXI
+        TaxiFront->x = -10; // REMOVES TAXI
+        TaxiFront->y = -10; // REMOVES TAXI
 
 
         
     }
     if(RedCar[1]->x == TaxiFront->x && RedCar[1]->y == TaxiFront->y){ // CHECKS IF TAXI (X,Y) == BLUE CAR(X,Y)
-        cout<<"Exiting game[Right Collision]"<<endl;
+        cout<<"Game Over[Right Collision]"<<endl;
         fastExplosion1->playOnce(); //PLAYS EXPLOSIVE
         GameOver->playOnce(); //DISPLAY'S GAME OVER SCREEN
 
-        RedCar[1]->x = -10; // HIDES BLUE CAR
-        RedCar[1]->y = -10; // HIDES BLUE CAR
+        RedCar[1]->x = -10; // REMOVES BLUE CAR
+        RedCar[1]->y = -10; // REMOVES BLUE CAR
 
-        TaxiFront->x = -10; //HIDES TAXI
-        TaxiFront->y = -10; //HIDES TAXI
+        TaxiFront->x = -10; //REMOVES TAXI
+        TaxiFront->y = -10; //REMOVES TAXI
         
     }
 
@@ -242,7 +234,18 @@ void App::idle(){
 
 
 
-void App::reset(){
+void App::resetRight(){
+
+
+    RedCar[1]->x = 0.01;
+    RedCar[1]->y = 0.03;
+    RedCar[1]-> w = 0.1;
+    RedCar[1]-> h = 0.1;
+
+}
+
+void App::resetLeft(){
+
 
     RedCar[0]->x = -0.1;
     RedCar[0]->y = 0.03;

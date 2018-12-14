@@ -35,7 +35,9 @@ public:
 
     void displayTimer();
 
-    void reset();
+    void resetRight();
+
+    void resetLeft();
 
     
     void collision();
