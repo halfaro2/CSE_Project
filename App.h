@@ -8,18 +8,20 @@ using namespace std;
 
 
 class App: public GlutApp {
+    
     bool start;
     bool gameOver;
-    TexRect* TaxiFront;        //TaxiFront
-    vector<TexRect*> RedCar;   //RedCar
+    
+    TexRect* Background;
+    TexRect* TaxiFront;     
+   
+    vector<TexRect*> RedCar;
         
     AnimatedRect* GameOver;
-    TexRect* Background;
     AnimatedRect* fastExplosion1;
     AnimatedRect* fastExplosion2;
     
-    
-    //adding a comment to test sublime merge program
+
 public:
     App(int argc, char** argv);
     
