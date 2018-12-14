@@ -27,6 +27,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     GameOver = new AnimatedRect("download.png", 1, 1, 100,-.7, .8 , 1.5, 1.5);
   
 
+
   //background
     Background = new TexRect("CityBackground.bmp",-1, 1, 2, 2);
     
@@ -44,7 +45,9 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //right lane
     RedCar.push_back(new TexRect("blue-tesla.png",0.01, 0.03, 0.1, 0.1));
     
-    fastExplosion = new AnimatedRect("fireball.bmp", 6, 6, 10, 0.1, -0.6, 0.5, 0.5);
+    fastExplosion1 = new AnimatedRect("fireball.bmp", 6, 6, 10, 0.1, -0.6, 0.5, 0.5);
+
+    fastExplosion2 = new AnimatedRect("fireball.bmp", 6, 6, 10, -0.6, -0.6, 0.5, 0.5);
 
 
     
@@ -63,14 +66,12 @@ void App::draw() {
 
     Background->draw(0.15);
     TaxiFront->draw(0.25);
-    fastExplosion->draw(0.30);
+    RedCar[0]->draw(0.30);
+    RedCar[1]->draw(0.30);
+    fastExplosion1->draw(0.33);
+    fastExplosion2->draw(0.15);
     GameOver->draw(0.55);
     
-
-    for(int i = 0; i < RedCar.size(); i++){
-        RedCar[i]->draw(0.25);
-    
-    }
     
 }
 
@@ -92,6 +93,7 @@ void App::keyDown(unsigned char key, float x, float y){
         cout<<"left"<<endl;
         TaxiFront-> x = -.6;
         TaxiFront->Redraw(0.25);
+
     }
     //going right
     if(key == 'd'){
@@ -152,10 +154,13 @@ void App::keyDown(unsigned char key, float x, float y){
     }
     if(key == '5'){
         RedCar[0]->x = -.6;
-        RedCar[0]->y = -.613;
+        RedCar[0]->y = -.6;
         
         RedCar[0]->w = .3;
         RedCar[0]->h = .3;
+
+        cout<<RedCar[0]->x<<endl;
+        cout<<RedCar[0]->y<<endl;
         
         RedCar[0]->Redraw(0.25);
         
@@ -198,11 +203,14 @@ void App::keyDown(unsigned char key, float x, float y){
     }
     if(key == '0'){
         RedCar[1]->x = 0.1;
-        RedCar[1]->y = -.613;
+        RedCar[1]->y = -.6;
         
         RedCar[1]->w = .3;
         RedCar[1]->h = .3;
         
+        cout<<RedCar[0]->x<<endl;
+        cout<<RedCar[0]->y<<endl;
+
         RedCar[0]->Redraw(0.25);
     }
 }
@@ -221,21 +229,23 @@ void App::collision(){
         
     if(RedCar[0]->x == TaxiFront->x && RedCar[0]->y == TaxiFront->y){
         cout<<"Exiting game[Left Collision]"<<endl;
-        fastExplosion->playLoop();
+        fastExplosion2->playLoop();
         GameOver->playOnce();
 
         
     }
     if(RedCar[1]->x == TaxiFront->x && RedCar[1]->y == TaxiFront->y){
         cout<<"Exiting game[Right Collision]"<<endl;
-        fastExplosion->playOnce();
+        fastExplosion1->playOnce();
         GameOver->playOnce();
         
     }
 
 }
 
-void App::idle(){  
+void App::idle(){ 
+
+collision(); 
 
 }
 
@@ -261,9 +271,10 @@ App::~App(){
     delete TaxiFront;
     delete Background;
     delete RedCar[0];
-    delete RedCar[0];
+    delete RedCar[1];
     delete GameOver;
-    delete fastExplosion;
+    delete fastExplosion1;
+    delete fastExplosion2;
 }
 
 

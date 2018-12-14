@@ -15,7 +15,8 @@ class App: public GlutApp {
         
     AnimatedRect* GameOver;
     TexRect* Background;
-    AnimatedRect* fastExplosion;
+    AnimatedRect* fastExplosion1;
+    AnimatedRect* fastExplosion2;
     
     
     //adding a comment to test sublime merge program
