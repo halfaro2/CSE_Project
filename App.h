@@ -9,9 +9,9 @@ using namespace std;
 
 class App: public GlutApp {
     bool start;
-    AnimatedRect* TaxiFront;        //TaxiFront
-    vector<AnimatedRect*> RedCar;   //RedCar
-    vector<AnimatedRect*> Coin;     //Coin
+    TexRect* TaxiFront;        //TaxiFront
+    vector<TexRect*> RedCar;   //RedCar
+    vector<TexRect*> Coin;     //Coin
     TexRect* Background;
     //adding a comment to test sublime merge program
 public:

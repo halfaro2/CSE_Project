@@ -21,19 +21,19 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     Background = new TexRect("CityBackground.bmp",-1, 1, 2, 2);
 
     //the taxi (player)
-    TaxiFront = new AnimatedRect("Taxi-Back-Yellow-icon.bmp", 1, 1, 100, .1, -0.6, 0.5, 0.5);    //TaxiFront
+    TaxiFront = new TexRect("Taxi-Back-Yellow-icon.bmp", .1, -0.6, 0.5, 0.5);    //TaxiFront
     //-0.6 left
     //.1
     
     //left lane
-    RedCar.push_back(new AnimatedRect("red-tesla.png", 1, 1, 10, -0.1, 0.03 , 0.1, 0.1));
+    RedCar.push_back(new TexRect("red-tesla.png",-0.1, 0.03 , 0.1, 0.1));
 
     //right lane
-    RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 10, 0.01, 0.03, 0.1, 0.1));
+    RedCar.push_back(new TexRect("blue-tesla.png",0.01, 0.03, 0.1, 0.1));
     
     //added coin for an extra 10 points  
     //need to make them come later once the timer starts to not conflict with cars coming  
-    Coin.push_back(new AnimatedRect("bitcoin-icon.bmp", 1, 1, 100, -.090, .5, .15, .15));
+    Coin.push_back(new TexRect("bitcoin-icon.bmp", -.090, .5, .15, .15));
      
    
   
@@ -44,7 +44,6 @@ void App::draw() {
 
     Background->draw(0.15);
     TaxiFront->draw(0.25); 
-    TaxiFront->playOnce();
     Coin[0]->draw(0.55);
 
     for(int i = 0; i < RedCar.size(); i++){
@@ -63,8 +62,8 @@ void App::keyDown(unsigned char key, float x, float y){
        cout<< "Start Game"<< endl;
         
         for(int i = 0; i < RedCar.size(); i++){
-            RedCar[i]->playOnce();
-            Coin[0]->playOnce();  
+            RedCar[i]->draw(0.25);
+            Coin[0]->draw(0.55);  
           }       
 
         start = true;
@@ -76,16 +75,21 @@ void App::keyDown(unsigned char key, float x, float y){
     
     //going left
     if(key == 'a'){
+        cout<<"left"<<endl;
         TaxiFront-> x = -.6;
+        TaxiFront->Redraw(0.25);
     }
     //going right
     if(key == 'd'){
+        cout<<"right"<<endl;
         TaxiFront-> x = .1;
+        TaxiFront->Redraw(0.25);
     }
 }
 
 void App::idle(){  
-    //cout<<"idle"<<endl;
+
+
     
 }
 
