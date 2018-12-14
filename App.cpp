@@ -14,7 +14,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     // fifth value is the Y position
     // sixth value is the width
     // seventh value is the height
-    
+    bool gameOver = false;
     bool start =  false;
 
   //background
@@ -23,7 +23,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //the taxi (player)
     TaxiFront = new TexRect("Taxi-Back-Yellow-icon.bmp", .1, -0.6, 0.5, 0.5);    //TaxiFront
     //-0.6 left
-    //.1
+    //0.1  right
     
     //left lane
     RedCar.push_back(new TexRect("red-tesla.png",-0.1, 0.03 , 0.1, 0.1));
@@ -44,10 +44,14 @@ void App::draw() {
 
     Background->draw(0.15);
     TaxiFront->draw(0.25); 
-    Coin[0]->draw(0.55);
+    
 
     for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->draw(0.25);
+    }
+
+    for(int i = 0; i < Coin.size(); i++){
+        Coin[i]->draw(0.55);
     }
     
 }
@@ -60,11 +64,7 @@ void App::keyDown(unsigned char key, float x, float y){
     
     if (key == ' '){
        cout<< "Start Game"<< endl;
-        
-        for(int i = 0; i < RedCar.size(); i++){
-            RedCar[i]->draw(0.25);
-            Coin[0]->draw(0.55);  
-          }       
+             
 
         start = true;
 
@@ -89,9 +89,25 @@ void App::keyDown(unsigned char key, float x, float y){
 
 void App::idle(){  
 
+    while(start){
+
+    }
+
 
     
 }
+
+void collision(float px, float py){
+        
+
+
+     // if (isGameOver()){
+     //  cout << "Game Over!" << endl;
+     //  gameOver = true;
+     //  }
+
+}
+
 
 void App::displayTimer(){
 

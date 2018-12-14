@@ -9,6 +9,7 @@ using namespace std;
 
 class App: public GlutApp {
     bool start;
+    bool gameOver;
     TexRect* TaxiFront;        //TaxiFront
     vector<TexRect*> RedCar;   //RedCar
     vector<TexRect*> Coin;     //Coin
