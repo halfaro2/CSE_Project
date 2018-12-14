@@ -24,6 +24,9 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     bool gameOver = false;
     bool start =  false;
 
+    GameOver.push_back(new AnimatedRect("game.jpg", 1, 1, 100,-0.1, 0.03 , 0.1, 0.1));
+  
+
   //background
     Background = new TexRect("CityBackground.bmp",-1, 1, 2, 2);
 
@@ -32,6 +35,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //-0.6 left  (-0.6, -0.6)
     //0.1  right (0.1, -0.6)
     
+
     //left lane
     RedCar.push_back(new AnimatedRect("red-tesla.png", 1, 1, 100,-0.1, 0.03 , 0.1, 0.1));
 
@@ -42,8 +46,7 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //need to make them come later once the timer starts to not conflict with cars coming  
     Coin.push_back(new TexRect("bitcoin-icon.bmp", -.090, 0.1, .15, .15));
      
-   
-  
+    
 
 }
 
