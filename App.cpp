@@ -69,7 +69,7 @@ void App::draw() {
     RedCar[0]->draw(0.30);
     RedCar[1]->draw(0.30);
     fastExplosion1->draw(0.33);
-    fastExplosion2->draw(0.15);
+    fastExplosion2->draw(0.33);
     GameOver->draw(0.55);
     
     
@@ -84,7 +84,7 @@ void App::keyDown(unsigned char key, float x, float y){
     if (key == ' '){
        cout<< "Start Game"<< endl;
 
-       start = true;
+       fastExplosion1->playLoop();
 
     }
     
@@ -93,6 +93,7 @@ void App::keyDown(unsigned char key, float x, float y){
         cout<<"left"<<endl;
         TaxiFront-> x = -.6;
         TaxiFront->Redraw(0.25);
+        collision(); 
 
     }
     //going right
@@ -100,6 +101,7 @@ void App::keyDown(unsigned char key, float x, float y){
         cout<<"right"<<endl;
         TaxiFront-> x = .1;
         TaxiFront->Redraw(0.25);
+        collision(); 
 
 //        RedCar[0]->x = TaxiFront ->x;
 //        RedCar[0]->y = TaxiFront -> y;
@@ -120,6 +122,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[0]->h = .1;
         
         RedCar[0]->Redraw(0.25);
+         collision();
         
     }
     if(key == '2'){
@@ -130,6 +133,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[0]->h = .2;
         
         RedCar[0]->Redraw(0.25);
+         collision();
         
     }
     if(key == '3'){
@@ -140,6 +144,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[0]->h = .3;
         
         RedCar[0]->Redraw(0.25);
+         collision();
         
     }
     if(key == '4'){
@@ -150,6 +155,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[0]->h = .3;
         
         RedCar[0]->Redraw(0.25);
+         collision();
         
     }
     if(key == '5'){
@@ -163,6 +169,7 @@ void App::keyDown(unsigned char key, float x, float y){
         cout<<RedCar[0]->y<<endl;
         
         RedCar[0]->Redraw(0.25);
+         collision();
         
     }
     if(key == '6'){
@@ -173,6 +180,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->h = .1;
         
         RedCar[0]->Redraw(0.25);
+         collision();
     }
     if(key == '7'){
         RedCar[1]->x = .046;
@@ -182,6 +190,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->h = .2;
         
         RedCar[0]->Redraw(0.25);
+         collision();
     }
     if(key == '8'){
         RedCar[1]->x = 0.064;
@@ -191,6 +200,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->h = .3;
         
         RedCar[0]->Redraw(0.25);
+         collision();
     }
     if(key == '9'){
         RedCar[1]->x = 0.082;
@@ -200,6 +210,7 @@ void App::keyDown(unsigned char key, float x, float y){
         RedCar[1]->h = .3;
         
         RedCar[0]->Redraw(0.25);
+         collision();
     }
     if(key == '0'){
         RedCar[1]->x = 0.1;
@@ -212,6 +223,7 @@ void App::keyDown(unsigned char key, float x, float y){
         cout<<RedCar[0]->y<<endl;
 
         RedCar[0]->Redraw(0.25);
+         collision();
     }
 }
 
@@ -236,7 +248,7 @@ void App::collision(){
     }
     if(RedCar[1]->x == TaxiFront->x && RedCar[1]->y == TaxiFront->y){
         cout<<"Exiting game[Right Collision]"<<endl;
-        fastExplosion1->playOnce();
+        fastExplosion1->playLoop();
         GameOver->playOnce();
         
     }
@@ -245,7 +257,7 @@ void App::collision(){
 
 void App::idle(){ 
 
-collision(); 
+
 
 }
 
