@@ -1,7 +1,14 @@
 #include <iostream>
 #include "App.h"
 #include <vector>
+#include <unistd.h>
+
+
+
 using namespace std;
+
+
+unsigned int microseconds = 1000000;
 
 
 
@@ -26,10 +33,10 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //0.1  right (0.1, -0.6)
     
     //left lane
-    RedCar.push_back(new TexRect("red-tesla.png",-0.1, 0.03 , 0.1, 0.1));
+    RedCar.push_back(new AnimatedRect("red-tesla.png", 1, 1, 100,-0.1, 0.03 , 0.1, 0.1));
 
     //right lane
-    RedCar.push_back(new TexRect("blue-tesla.png",0.01, 0.03, 0.1, 0.1));
+    RedCar.push_back(new AnimatedRect("blue-tesla.png", 1, 1, 100,0.01, 0.03, 0.1, 0.1));
     
     //added coin for an extra 10 points  
     //need to make them come later once the timer starts to not conflict with cars coming  
@@ -48,11 +55,12 @@ void App::draw() {
 
     for(int i = 0; i < RedCar.size(); i++){
         RedCar[i]->draw(0.25);
+        RedCar[i]->playOnce();
     }
 
-    for(int i = 0; i < Coin.size(); i++){
-        Coin[i]->draw(0.55);
-    }
+    // for(int i = 0; i < Coin.size(); i++){
+    //     Coin[i]->draw(0.55);
+    // }
     
 }
 
@@ -65,7 +73,7 @@ void App::keyDown(unsigned char key, float x, float y){
     if (key == ' '){
        cout<< "Start Game"<< endl;
        start = true;
-        idle();                     
+       idle();                  
     }
     
     //going left
@@ -86,6 +94,7 @@ void App::keyDown(unsigned char key, float x, float y){
 void App::moveObjects(){
     
 
+    
 
        
 }
@@ -94,7 +103,7 @@ void App::moveObjects(){
 
 void App:: collision(){
         
-    if((RedCar[0] -> x == -.06), RedCar[0] -> x == 0.5){
+    if(RedCar[0]->x == TaxiFront->x && RedCar[0]->y == TaxiFront->y){
         cout<<"Exiting game[Left Collision]"<<endl;
         exit(0);
     }
@@ -107,29 +116,36 @@ void App:: collision(){
 
 void App::idle(){  
 
-     if(start == true){
+if(start == true){
+    
+       
+       RedCar[0]->x = -0.2;
+       RedCar[0]->y = -0.096;
+       RedCar[0]->Redraw(0.55);
+       usleep(microseconds);
+       RedCar[0]->x = -0.3;
+       RedCar[0]->y = -0.222;
+       RedCar[0]->Redraw(0.55);
+       usleep(microseconds);
+       RedCar[0]->x = -0.4;
+       RedCar[0]->y = -0.348;
+       RedCar[0]->Redraw(0.55);
+       usleep(microseconds);
+       RedCar[0]->x = -0.5;
+       RedCar[0]->y = -0.474;
+       RedCar[0]->Redraw(0.55);
+       usleep(microseconds);
+       RedCar[0]->x = -0.6;
+       RedCar[0]->y = -0.6;
+       RedCar[0]->Redraw(0.55);
+    
+       reset();
+     }
  
-        for(int i = 0; i < 5; i++){
-           
-            cout<<"car and coin going down"<<endl;
-            RedCar[0]->y -= 0.18;
-            RedCar[0]->x -= .1;
-            RedCar[0]->w += .1;
-            RedCar[0]->h += .1;
-            RedCar[0]->Redraw(0.25);
-            
-            
-
-        }
-
-        reset();
-
-
-    }
-
-
+        glutPostRedisplay();
     
 }
+
 
 
 void App::reset(){
