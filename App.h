@@ -13,6 +13,7 @@ class App: public GlutApp {
     TexRect* TaxiFront;        //TaxiFront
     vector<TexRect*> RedCar;   //RedCar
     vector<TexRect*> Coin;     //Coin
+    vector<AnimatedRect*> GameOver;
     TexRect* Background;
     AnimatedRect* fastExplosion;
     //adding a comment to test sublime merge program
