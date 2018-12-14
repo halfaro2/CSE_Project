@@ -1,7 +1,5 @@
 #include "TexRect.h"
-#include <GL/glut.h>    // Header File For The GLUT Library 
-#include <GL/gl.h>    // Header File For The OpenGL32 Library
-#include <GL/glu.h>  
+
 TexRect::TexRect(const char* filename, float x=0, float y=0, float w=0.5, float h=0.5): Rect(x, y, w, h, 1.0f, 1.0f, 1.0f){
     
     glClearColor (0.0, 0.0, 0.0, 0.0);

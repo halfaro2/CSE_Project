@@ -68,6 +68,17 @@ void App::keyDown(unsigned char key, float x, float y){
     if (key == ' '){
        cout<< "Start Game"<< endl;
        start = true;
+        while(start == true){
+            if((RedCar[0] -> x != -.6 ) && (RedCar[0] ->y != -.6)){
+            cout<<"decreasing values"<<endl;
+            RedCar[0]->x -= 0.1;
+            RedCar[0]->y -= 0.126;
+            RedCar[0]->Redraw(0.25);
+            }
+            if ((RedCar[0] -> x == -.6 ) && (RedCar[0] ->y == -.6)) {
+                break;
+            }
+        }
                     
     }
     
@@ -94,10 +105,17 @@ void App::keyDown(unsigned char key, float x, float y){
     }
 }
 
+void App::CarDown(){
+//    cout<<"decreasing values"<<endl;
+//    RedCar[0]->x -= 0.1;
+//    RedCar[0]->y -= 0.126;
+//    RedCar[0]->Redraw(0.25);
+}
 
 
 
-void App:: collision(){
+
+void App::collision(){
         
     if(RedCar[0]->x == TaxiFront->x && RedCar[0]->y == TaxiFront->y){
         cout<<"Exiting game[Left Collision]"<<endl;
@@ -113,17 +131,12 @@ void App:: collision(){
 }
 
 void App::idle(){  
-    while(start == true){
-        
-        cout<<"decreasing values"<<endl;
-        RedCar[0]->x -= 0.1;
-        RedCar[0]->y -= 0.126;
-        RedCar[0]->Redraw(0.25);
-        usleep(microseconds);
-        keyDown();
-    
-    
-}
+//    while(start == true){
+//        cout<<"decreasing values"<<endl;
+//        RedCar[0]->x -= 0.1;
+//        RedCar[0]->y -= 0.126;
+//        RedCar[0]->Redraw(0.25);
+//}
         glutPostRedisplay();
 }
 

@@ -31,10 +31,10 @@ public:
 
     void reset();
 
-   
     
     void collision();
     
+    void CarDown();
     
     ~App();
     
