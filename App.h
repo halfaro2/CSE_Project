@@ -11,7 +11,7 @@ class App: public GlutApp {
     bool start;
     bool gameOver;
     TexRect* TaxiFront;        //TaxiFront
-    vector<AnimatedRect*> RedCar;   //RedCar
+    vector<TexRect*> RedCar;   //RedCar
     vector<TexRect*> Coin;     //Coin
     TexRect* Background;
     AnimatedRect* fastExplosion;
@@ -31,7 +31,7 @@ public:
 
     void reset();
 
-    void moveObjects();
+   
     
     void collision();
     

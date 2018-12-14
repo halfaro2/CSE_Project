@@ -26,6 +26,8 @@ public:
 
    virtual void Redraw(float z) const;
 
+   virtual void Animate(float z)const;
+
    bool contains(float, float) const;
 };
 

@@ -1,5 +1,7 @@
 #include "TexRect.h"
-
+#include <GL/glut.h>    // Header File For The GLUT Library 
+#include <GL/gl.h>    // Header File For The OpenGL32 Library
+#include <GL/glu.h>  
 TexRect::TexRect(const char* filename, float x=0, float y=0, float w=0.5, float h=0.5): Rect(x, y, w, h, 1.0f, 1.0f, 1.0f){
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
@@ -47,14 +49,12 @@ void TexRect::draw(float z) const {
     glEnd();
     
     glDisable(GL_TEXTURE_2D);
-
-
 }
 
 
 void TexRect::Redraw(float z) const{
 
-     glBindTexture( GL_TEXTURE_2D, texture_id );
+    glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
     
     glBegin(GL_QUADS);
@@ -73,6 +73,49 @@ void TexRect::Redraw(float z) const{
     
     glEnd();
     
+    glDisable(GL_TEXTURE_2D);
+    glFlush();
+    glutSwapBuffers();
+    glutPostRedisplay();
+
+}
+
+void TexRect::Animate(float z)const{
+    float x_offset = -0.1;
+    float y_offset = -0.126;
+    if(x_offset != -0.6 && y_offset != -0.6){
+        x_offset -= -0.1;
+        y_offset -= -0.126; 
+    }
+    else{
+        x_offset = -0.1;
+        y_offset = 0.03; 
+    }
+    glPushMatrix(); 
+
+    glLoadIdentity ();
+    glTranslatef(x_offset, 0.0f, 0.0f);
+
+    glBindTexture( GL_TEXTURE_2D, texture_id );
+    glEnable(GL_TEXTURE_2D);
+    
+    glBegin(GL_QUADS);
+    glColor4f(1, 1, 1, 1);
+    glTexCoord2f(0, 0);
+    glVertex3f(x+x_offset, y - h+ y_offset, z);
+    
+    glTexCoord2f(0, 1);
+    glVertex3f(x+x_offset, y+ y_offset, z);
+    
+    glTexCoord2f(1, 1);
+    glVertex3f(x+w+x_offset, y+ y_offset, z);
+    
+    glTexCoord2f(1, 0);
+    glVertex3f(x+w+x_offset, y - h + y_offset, z);
+    
+    glEnd();
+    
+    glPopMatrix();
     glDisable(GL_TEXTURE_2D);
     glFlush();
     glutSwapBuffers();
