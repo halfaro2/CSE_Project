@@ -14,6 +14,7 @@ class App: public GlutApp {
     vector<AnimatedRect*> RedCar;   //RedCar
     vector<TexRect*> Coin;     //Coin
     TexRect* Background;
+    AnimatedRect* fastExplosion;
     //adding a comment to test sublime merge program
 public:
     App(int argc, char** argv);
@@ -33,6 +34,7 @@ public:
     void moveObjects();
     
     void collision();
+    
     
     ~App();
     
