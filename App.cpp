@@ -45,9 +45,9 @@ App::App(int argc, char** argv): GlutApp(argc, argv){
     //right lane
     RedCar.push_back(new TexRect("blue-tesla.png",0.01, 0.03, 0.1, 0.1));
     
-    fastExplosion1 = new AnimatedRect("fireball.bmp", 6, 6, 10, 0.1, -0.6, 0.5, 0.5);
+    fastExplosion1 = new AnimatedRect("explosion-sprite.png", 3, 4, 10, 0.1, -0.6, 0.5, 0.5);
 
-    fastExplosion2 = new AnimatedRect("fireball.bmp", 6, 6, 10, -0.6, -0.6, 0.5, 0.5);
+    fastExplosion2 = new AnimatedRect("explosion-sprite.png", 3, 4, 10, -0.6, -0.6, 0.5, 0.5);
 
 
     
@@ -69,7 +69,7 @@ void App::draw() {
     RedCar[0]->draw(0.30);
     RedCar[1]->draw(0.30);
     fastExplosion1->draw(0.33);
-    fastExplosion2->draw(0.15);
+    fastExplosion2->draw(0.33);
     GameOver->draw(0.55);
     
     

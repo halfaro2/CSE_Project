@@ -30,6 +30,7 @@
 		D2D364A021C36D1B007A9A1F /* red-tesla.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D3649F21C36D14007A9A1F /* red-tesla.png */; };
 		D2D364A721C3D9D6007A9A1F /* download.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D364A621C3D9D0007A9A1F /* download.png */; };
 		D2D364A921C3DAA8007A9A1F /* blue-tesla.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D364A821C3DAA1007A9A1F /* blue-tesla.png */; };
+		D2D364AB21C3E331007A9A1F /* explosion-sprite.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2D364AA21C3E32B007A9A1F /* explosion-sprite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				D2D364AB21C3E331007A9A1F /* explosion-sprite.png in CopyFiles */,
 				D2D364A921C3DAA8007A9A1F /* blue-tesla.png in CopyFiles */,
 				D2D364A721C3D9D6007A9A1F /* download.png in CopyFiles */,
 				D2D364A021C36D1B007A9A1F /* red-tesla.png in CopyFiles */,
@@ -97,6 +99,7 @@
 		D2D3649F21C36D14007A9A1F /* red-tesla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-tesla.png"; sourceTree = "<group>"; };
 		D2D364A621C3D9D0007A9A1F /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
 		D2D364A821C3DAA1007A9A1F /* blue-tesla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-tesla.png"; sourceTree = "<group>"; };
+		D2D364AA21C3E32B007A9A1F /* explosion-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion-sprite.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,7 @@
 				D2D364A621C3D9D0007A9A1F /* download.png */,
 				D2D3649F21C36D14007A9A1F /* red-tesla.png */,
 				D2A39A1421B60DF4009E9B28 /* Airplane-Front-Red-icon.png */,
+				D2D364AA21C3E32B007A9A1F /* explosion-sprite.png */,
 				D2D364A821C3DAA1007A9A1F /* blue-tesla.png */,
 				D2A39A1221B60C87009E9B28 /* copcar.png */,
 				D2A39A1021B5DD81009E9B28 /* balloon.png */,
