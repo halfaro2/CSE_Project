@@ -71,6 +71,8 @@ void App::keyDown(unsigned char key, float x, float y){
    
     
     //going left
+   
+    if(start == true){
     if(key == 'a'){
         cout<<"left"<<endl;
         TaxiFront-> x = -.6;
@@ -83,7 +85,7 @@ void App::keyDown(unsigned char key, float x, float y){
         TaxiFront->Redraw(0.25);
     }
 }
-
+}
 
 void App::moveObjects(){
     
@@ -102,25 +104,27 @@ void collision(float px, float py){
      //  cout << "Game Over!" << endl;
      //  gameOver = true;
      //  }
+    
+    
 
 }
 
 void App::idle(){  
 
-     if(start == true){
-        for(float i = 0.100; i > -0.800; i = i-0.1){
-            for(float j = -0.1; j > -0.6; j = j-0.1){
-            cout<<"car and coin going down"<<endl;
-            RedCar[0]->y = i;
-            RedCar[0]->x = j;
-            RedCar[0]->w +=0.001;
-            RedCar[0]->h +=0.001;
-            RedCar[0]->Redraw(0.25);
-            //Coin[0]->y = i;
-            //Coin[0]->Redraw(0.25);
-            }
-        }
-       }
+//     if(start == true){
+//        for(float i = 0.100; i > -0.800; i = i-0.1){
+//            for(float j = -0.1; j > -0.6; j = j-0.1){
+//            cout<<"car and coin going down"<<endl;
+//            RedCar[0]->y = i;
+//            RedCar[0]->x = j;
+//            RedCar[0]->w +=0.001;
+//            RedCar[0]->h +=0.001;
+//            RedCar[0]->Redraw(0.25);
+//            //Coin[0]->y = i;
+//            //Coin[0]->Redraw(0.25);
+//            }
+//        }
+//       }
 
 
     
